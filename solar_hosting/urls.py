@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('solar_hosting/', views.index, name="main"),
+    path('', views.index, name="main"),
 ]
