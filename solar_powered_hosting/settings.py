@@ -123,3 +123,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = "/uploads/"
+
+LOGIN_URL = 'login'  # Перенаправление на страницу входа
+LOGOUT_URL = 'logout'  # Перенаправление на страницу выхода
+LOGIN_REDIRECT_URL = 'dashboard'  # После успешного входа, перенаправление на личный кабинет
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
