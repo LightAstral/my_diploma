@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -42,9 +44,9 @@ def login_view(request):
             login(request, user)
             return redirect('solar_hosting:dashboard')
         else:
-            # Обработка ошибки входа
-            pass
-    return redirect('solar_hosting/index.html')  # Перенаправляем на главную страницу после успешного входа
+            messages.error(request, 'Неправильное имя пользователя или пароль. Попробуйте ещё раз.')
+            # Вы можете добавить другую обработку ошибки, если необходимо
+    return redirect('solar_hosting:main')  # Перенаправляем на главную страницу после неудачного входа
 
 
 def registration_view(request):
@@ -59,11 +61,24 @@ def registration_view(request):
     return render(request, 'solar_hosting/index.html', {'form': form})
 
 
+@login_required
 def dashboard(request):
     if request.user.is_authenticated:
         return render(request, 'solar_hosting/dashboard.html')
     else:
         return redirect('solar_hosting:main')
+
+
+@login_required
+def profile(request):
+    # Логика для отображения профиля пользователя
+    return render(request, 'solar_hosting/profile.html')
+
+
+@login_required
+def settings(request):
+    # Логика для отображения настроек пользователя
+    return render(request, 'solar_hosting/settings.html')
 
 
 def logout_view(request):

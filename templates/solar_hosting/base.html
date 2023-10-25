@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     {% load static %}
+    {% block extra_css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/dashboard.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/buttons.css' %}">
+    {% endblock %}
+
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,14 +46,14 @@
         <div class="modal-content">
             <div class="modal-header tit-up">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Customer Login</h4>
+                <h4 class="modal-title">Вхід клієнта</h4>
             </div>
             <div class="modal-body customer-box row">
                 <div class="col-md-12">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                        <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                        <li class="active"><a href="#Login" data-toggle="tab">Вхід</a></li>
+                        <li><a href="#Registration" data-toggle="tab">Реєстрація</a></li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -72,15 +78,14 @@
                                         <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
                                             Submit
                                         </button>
-                                        <a class="for-pwd" href="{% url 'solar_hosting:password_reset' %}">Forgot your
-                                            password?</a>
+                                        <a class="for-pwd" href="{% url 'solar_hosting:password_reset' %}">Забули свій пароль?</a>
                                     </div>
                                 </div>
-                                {% if messages %}
-                                <div class="error-message">
-                                    {{ messages }}
-                                </div>
-                                {% endif %}
+<!--                                {% if messages %}-->
+<!--                                <div class="error-message">-->
+<!--                                    {{ messages }}-->
+<!--                                </div>-->
+<!--                                {% endif %}-->
                             </form>
                         </div>
                         <div class="tab-pane" id="Registration">
@@ -117,10 +122,10 @@
                             <div class="row">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-                                        Save &amp; Continue
+                                        Зберегти та продовжити
                                     </button>
                                     <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-                                        Cancel
+                                        Скасувати
                                     </button>
                                 </div>
                             </div>
@@ -167,7 +172,7 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Увімкнути навігацію</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -178,26 +183,26 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'solar_hosting:main' %}">Home</a></li>
-                    <li><a href="{% url 'solar_hosting:features' %}">Features </a></li>
-                    <li><a href="{% url 'solar_hosting:domain' %}">Domain</a></li>
-                    <li><a href="{% url 'solar_hosting:hosting' %}">Hosting</a></li>
-                    <li><a href="{% url 'solar_hosting:pricing' %}">Pricing</a></li>
-                    <li><a href="{% url 'solar_hosting:testimonials' %}">Testimonials</a></li>
-                    <li><a href="{% url 'solar_hosting:contact' %}">Contact</a></li>
+                    <li><a href="{% url 'solar_hosting:main' %}">Дім</a></li>
+                    <li><a href="{% url 'solar_hosting:features' %}">Особливості</a></li>
+                    <li><a href="{% url 'solar_hosting:domain' %}">Домен</a></li>
+                    <li><a href="{% url 'solar_hosting:hosting' %}">Хостинг</a></li>
+                    <li><a href="{% url 'solar_hosting:pricing' %}">Ціноутворення</a></li>
+                    <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>
+                    <li><a href="{% url 'solar_hosting:contact' %}">Контакт</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                     <li>
                         <form method="post" action="{% url 'solar_hosting:dashboard' %}">
                             {% csrf_token %}
-                            <button type="submit">Dashboard</button>
+                            <button type="submit" class="buttonpanel">Панель приладів</button>
                         </form>
                     </li>
-                    <li>
+                    <li style="margin-left: 10px;">
                         <form method="post" action="{% url 'solar_hosting:logout' %}">
                             {% csrf_token %}
-                            <button type="submit">Logout</button>
+                            <button type="submit" class="button-logout">Вийти</button>
                         </form>
                     </li>
                     {% else %}
@@ -213,23 +218,23 @@
 {% block content %}
 
 {% endblock %}
-<div class="parallax section db parallax-off" style="background-image:url('/uploads/parallax_02.jpg');">
+<div class="parallax section db parallax-off" style="background-image:url('solar_hosting/uploads/parallax_02.jpg');">
     <div class="container">
         <div class="row logos">
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="/uploads/logo_01.png" alt="" class="img-repsonsive"></a>
+                <a href="#"><img src="/uploads/logo_01.png" alt="img" class="img-repsonsive"></a>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="/uploads/logo_02.png" alt="" class="img-repsonsive"></a>
+                <a href="#"><img src="/uploads/logo_02.png" alt="img" class="img-repsonsive"></a>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="/uploads/logo_03.png" alt="" class="img-repsonsive"></a>
+                <a href="#"><img src="/uploads/logo_03.png" alt="img" class="img-repsonsive"></a>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="/uploads/logo_04.png" alt="" class="img-repsonsive"></a>
+                <a href="#"><img src="/uploads/logo_04.png" alt="img" class="img-repsonsive"></a>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="/uploads/logo_05.png" alt="" class="img-repsonsive"></a>
+                <a href="#"><img src="/uploads/logo_05.png" alt="img" class="img-repsonsive"></a>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
                 <a href="#"><img src="/uploads/logo_06.png" alt="img" class="img-repsonsive"></a>
@@ -257,8 +262,7 @@
                 </div><!-- end clearfix -->
             </div><!-- end col -->
             <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class
-                "widget clearfix">
+                <div class="widget clearfix">
                 <div class="widget-title">
                     <h3>Information Link</h3>
                 </div>
@@ -309,7 +313,7 @@
         <div class="footer-distributed">
             <div class="footer-left">
                 <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">HostCloud</a> Design By : <a
-                        href="https://html.design/">html design</a></p>
+                        href="https://solarhosting.in.ua/">Solar Hosting</a></p>
             </div>
             <div class="footer-right">
                 <form method="get" action="#">

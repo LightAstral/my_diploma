@@ -1,8 +1,17 @@
-{% extends 'solar_hosting/base.html' %}
-
+{% extends "solar_hosting/base.html" %}
 {% block content %}
-<div class="container">
-    <h1>Welcome to your Dashboard</h1>
-    <p>This is the protected area that only logged-in users can access.</p>
-</div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'solar_hosting:profile' %}" style="color: black;">Мій профіль</a></li>
+                    <li><a href="{% url 'solar_hosting:settings' %}" style="color: black;">Налаштування</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h2>Ласкаво просимо до особистого кабінету</h2>
+    <p>Це захищена зона, доступ до якої мають лише зареєстровані користувачі.</p>
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+/* Стиль для кнопки "Панель приладів" */
+.buttonpanel {
+    background-color: #3498db;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 10px;
+    /* Другие стили по вашему усмотрению */
+}
+
+/* Стиль для кнопки "Вийти" */
+.button-logout {
+    background-color: red;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 10px;
+    /* Другие стили по вашему усмотрению */
+}

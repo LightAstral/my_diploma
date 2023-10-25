@@ -1,7 +1,20 @@
 {% extends "solar_hosting/base.html" %}
 <!--{% load static %}-->
-{% block content %}
+{% block extra_css %}
+    {{ block.super }} {# Подключите другие CSS-файлы, если необходимо #}
+    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
+{% endblock %}
 
+{% block content %}
+    {% if messages %}
+        <div class="error-messages">
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel"
      data-pause="hover" data-interval="false">
     <!-- Indicators -->

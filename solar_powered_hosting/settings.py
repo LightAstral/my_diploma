@@ -134,3 +134,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
+
+PASSWORD_RESET_CONFIRM_REVERSE = 'password_reset_confirm'
