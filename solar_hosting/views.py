@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
-from .forms import CustomUserCreationForm
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
+from .forms import CustomUserCreationForm, UserProfileForm, EmailChangeForm, PhoneChangeForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
 
 
@@ -51,13 +51,13 @@ def login_view(request):
 
 def registration_view(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('solar_hosting:dashboard')  # Перенаправляем на главную страницу после успешной регистрации
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'solar_hosting/index.html', {'form': form})
 
 
@@ -71,8 +71,8 @@ def dashboard(request):
 
 @login_required
 def profile(request):
-    # Логика для отображения профиля пользователя
-    return render(request, 'solar_hosting/profile.html')
+    user = request.user
+    return render(request, 'solar_hosting/profile.html', {'user': user})
 
 
 @login_required
@@ -85,3 +85,49 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
     return redirect('solar_hosting:main')
+
+
+@login_required
+def change_settings(request):
+    profile_form = UserProfileForm(instance=request.user)
+    email_form = EmailChangeForm(initial={'email': request.user.email})
+    phone_form = PhoneChangeForm(initial={'phone': request.user.phone})
+    password_form = PasswordChangeForm(request.user)
+
+    if request.method == 'POST':
+        action = request.GET.get('action')
+        if action == 'profile':
+            profile_form = UserProfileForm(request.POST, instance=request.user)
+            if profile_form.is_valid():
+                profile_form.save()
+                messages.success(request, 'Личные данные обновлены успешно.')
+
+        elif action == 'email':
+            email_form = EmailChangeForm(request.POST)
+            if email_form.is_valid():
+                new_email = email_form.cleaned_data['email']
+                request.user.email = new_email
+                request.user.save()
+                messages.success(request, 'Email успешно изменен.')
+
+        elif action == 'phone':
+            phone_form = PhoneChangeForm(request.POST)
+            if phone_form.is_valid():
+                new_phone = phone_form.cleaned_data['phone']
+                request.user.phone = new_phone
+                request.user.save()
+                messages.success(request, 'Телефон успешно изменен.')
+
+        elif action == 'password':
+            password_form = PasswordChangeForm(request.user, request.POST)
+            if password_form.is_valid():
+                user = password_form.save()
+                update_session_auth_hash(request, user)  # Обновляет сессию после смены пароля
+                messages.success(request, 'Пароль успешно изменен.')
+
+    return render(request, 'solar_hosting/settings.html', {
+        'profile_form': profile_form,
+        'email_form': email_form,
+        'phone_form': phone_form,
+        'password_form': password_form,
+    })

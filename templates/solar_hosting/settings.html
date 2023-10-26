@@ -1,6 +1,42 @@
 {% extends 'solar_hosting/dashboard.html' %}
 
 {% block content %}
-    <!-- Код для страницы профиля -->
-    <!-- Вставьте здесь информацию о профиле пользователя -->
+    <div class="user-settings">
+        <h2>Настройки пользователя</h2>
+        <div>
+            <h3>Личные данные</h3>
+            <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=profile">
+                {% csrf_token %}
+                {{ profile_form.as_p }}
+                <button type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+        <div>
+            <h3>Email</h3>
+            <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=email">
+                {% csrf_token %}
+                {{ email_form.as_p }}
+                <button type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+        <div>
+            <h3>Телефон</h3>
+            <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=phone">
+                {% csrf_token %}
+                {{ phone_form.as_p }}
+                <button type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+        <div>
+            <h3>Пароль</h3>
+            <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=password">
+                {% csrf_token %}
+                {{ password_form.as_p }}
+                <button type="submit">Изменить пароль</button>
+            </form>
+        </div>
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -21,13 +21,14 @@ from django.contrib.auth.models import AbstractUser, Permission, Group
 
 
 class User(AbstractUser):
+    username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=15)
 
     # Измените related_name для groups и user_permissions
-    groups = models.ManyToManyField(Group, verbose_name='Groups', blank=True, related_name='solar_hosting_users')
-    user_permissions = models.ManyToManyField(Permission, verbose_name='User permissions', blank=True,
-                                              related_name='solar_hosting_users')
+    # groups = models.ManyToManyField(Group, verbose_name='Groups', blank=True, related_name='solar_hosting_users')
+    # user_permissions = models.ManyToManyField(Permission, verbose_name='User permissions', blank=True,
+    #                                           related_name='solar_hosting_users')
 
     def __str__(self):
         return self.username

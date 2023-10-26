@@ -124,6 +124,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = "/uploads/"
 
+AUTH_USER_MODEL = 'solar_hosting.User'
+
 LOGIN_URL = 'login'  # Перенаправление на страницу входа
 LOGOUT_URL = 'logout'  # Перенаправление на страницу выхода
 LOGIN_REDIRECT_URL = 'dashboard'  # После успешного входа, перенаправление на личный кабинет
