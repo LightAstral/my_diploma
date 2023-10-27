@@ -89,7 +89,7 @@ def logout_view(request):
 
 @login_required
 def change_settings(request):
-    profile_form = UserProfileForm(instance=request.user)
+    profile_form = CustomUserCreationForm(instance=request.user)
     email_form = EmailChangeForm(initial={'email': request.user.email})
     phone_form = PhoneChangeForm(initial={'phone': request.user.phone})
     password_form = PasswordChangeForm(request.user)
@@ -97,7 +97,7 @@ def change_settings(request):
     if request.method == 'POST':
         action = request.GET.get('action')
         if action == 'profile':
-            profile_form = UserProfileForm(request.POST, instance=request.user)
+            profile_form = CustomUserCreationForm(request.POST, instance=request.user)
             if profile_form.is_valid():
                 profile_form.save()
                 messages.success(request, 'Личные данные обновлены успешно.')

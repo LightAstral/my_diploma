@@ -1,42 +1,146 @@
 {% extends 'solar_hosting/dashboard.html' %}
 
 {% block dashboard_content %}
+
+<style>
+    .user-settings {
+        background-color: #f3f3f3;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .user-settings h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .user-settings p {
+        color: #666;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .user-settings .data-display {
+        display: block;
+    }
+
+    .user-settings .data-edit {
+        display: none;
+    }
+
+    .user-settings .edit-button,
+    .user-settings .save-button {
+        display: block;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 20px; /* Задаем круглые углы */
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .user-settings .edit-button:hover,
+    .user-settings .save-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".edit-button").click(function() {
+                var container = $(this).closest(".user-settings");
+                container.find(".data-display").hide();
+                container.find(".data-edit").show();
+                container.find(".edit-button").hide();
+                container.find(".save-button").show();
+            });
+        });
+    </script>
+
     <div class="user-settings">
-        <h2>Настройки пользователя</h2>
-        <div>
-            <h3>Личные данные</h3>
+        <h4>Настройки пользователя</h4>
+
+        <!-- Личные данные -->
+        <div class="data-display">
+            <h5>Личные данные</h5>
+            <p>Ім'я: {{ user.first_name }}</p>
+            <p>Прізвище: {{ user.last_name }}</p>
+            <button class="edit-button">Изменить данные</button>
+        </div>
+        <div class="data-edit">
+            <h4>Личные данные</h4>
             <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=profile">
                 {% csrf_token %}
-                {{ profile_form.as_p }}
-                <button type="submit">Сохранить изменения</button>
+                <label for="first_name">Ім'я:</label>
+                <input type="text" name="first_name" id="first_name" value="{{ user.first_name }}">
+                <label for="last_name">Прізвище:</label>
+                <input type="text" name="last_name" id="last_name" value="{{ user.last_name }}">
+                <button type="submit" class="save-button">Сохранить изменения</button>
             </form>
         </div>
-        <div>
+
+        <!-- Email -->
+        <div class="data-display">
             <h3>Email</h3>
+            <p>Email: {{user.email}}</p>
+            <button class="edit-button">Изменить данные</button>
+        </div>
+        <div class="data-edit">
+            <h4>Email</h4>
             <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=email">
                 {% csrf_token %}
-                {{ email_form.as_p }}
-                <button type="submit">Сохранить изменения</button>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" value="{{ user.email }}">
+                <button type="submit" class="save-button">Сохранить изменения</button>
             </form>
         </div>
-        <div>
-            <h3>Телефон</h3>
+
+        <!-- Телефон -->
+        <div class="data-display">
+            <h4>Телефон</h4>
+            <p>Телефон: {{user.phone}}</p>
+            <button class="edit-button">Изменить данные</button>
+        </div>
+        <div class="data-edit">
+            <h5>Телефон</h5>
             <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=phone">
                 {% csrf_token %}
-                {{ phone_form.as_p }}
-                <button type="submit">Сохранить изменения</button>
+                <label for="phone">Телефон:</label>
+                <input type="text" name="phone" id="phone" value="{{ user.phone }}">
+                <button type="submit" class="save-button">Сохранить изменения</button>
             </form>
         </div>
-        <div>
+
+        <!-- Пароль -->
+        <div class="data-display">
+            <h3>Пароль</h3>
+            <p>Пароль: ********</p>
+            <button class="edit-button">Изменить данные</button>
+        </div>
+        <div class="data-edit">
             <h3>Пароль</h3>
             <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=password">
                 {% csrf_token %}
-                {{ password_form.as_p }}
-                <button type="submit">Изменить пароль</button>
+                <label for="password">Новый пароль:</label>
+                <input type="password" name="password" id="password">
+                <button type="submit" class="save-button">Изменить пароль</button>
             </form>
         </div>
+
         {% for message in messages %}
             <div class="alert alert-success" role="alert">{{ message }}</div>
         {% endfor %}
     </div>
+
 {% endblock %}
