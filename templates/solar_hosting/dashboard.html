@@ -1,9 +1,11 @@
 {% extends "solar_hosting/base.html" %}
+
 {% block extra_css %}
     {% load static %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/profile-style.css' %}">
 {% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-md-3">
@@ -15,8 +17,10 @@
             </div>
         </div>
         <div class="col-md-9">
-            <h2>Ласкаво просимо до особистого кабінету</h2>
-    <p>Це захищена зона, доступ до якої мають лише зареєстровані користувачі.</p>
+            {% block dashboard_content %}
+                <h2>Ласкаво просимо до особистого кабінету</h2>
+                <p>Це захищена зона, доступ до якої мають лише зареєстровані користувачі.</p>
+            {% endblock %}
         </div>
     </div>
 {% endblock %}
