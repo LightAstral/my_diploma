@@ -1,4 +1,3 @@
-from django.db import models
 # from django.contrib.auth.models import AbstractUser
 #
 #
@@ -17,6 +16,7 @@ from django.db import models
 #
 #     def __str__(self):
 #         return self.username
+from django.db import models
 from django.contrib.auth.models import AbstractUser, Permission, Group
 
 
@@ -25,13 +25,12 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=30)
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(unique=True)
-    phone = models.CharField(max_length=15)
-
-    # Измените related_name для groups и user_permissions
-    # groups = models.ManyToManyField(Group, verbose_name='Groups', blank=True, related_name='solar_hosting_users')
-    # user_permissions = models.ManyToManyField(Permission, verbose_name='User permissions', blank=True,
-    #                                           related_name='solar_hosting_users')
+    phone = models.CharField(max_length=20)
 
     def __str__(self):
         return self.username
 
+    # Измените related_name для groups и user_permissions
+    # groups = models.ManyToManyField(Group, verbose_name='Groups', blank=True, related_name='solar_hosting_users')
+    # user_permissions = models.ManyToManyField(Permission, verbose_name='User permissions', blank=True,
+    #                                           related_name='solar_hosting_users_permissions')

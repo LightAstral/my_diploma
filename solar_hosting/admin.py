@@ -1,10 +1,21 @@
+# from django.contrib import admin
+# from .models import User
+#
+#
+# # Register your models here.
+#
+#
+# @admin.register(User)
+# class UserAdmin(admin.ModelAdmin):
+#     list_display = ('username', 'email', 'phone')
 from django.contrib import admin
-from .models import User  # Импорт модели User
+from django.contrib.auth.admin import UserAdmin
+from .models import User
 
 
-# Register your models here.
+class CustomUserAdmin(UserAdmin):
+    list_display = ('username', 'first_name', 'last_name', 'email', 'phone')
+    readonly_fields = ('password',)
 
 
-@admin.register(User)  # Регистрация модели User в административной панели
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email', 'phone')  # Укажите поля, которые вы хотите видеть в списке
+admin.site.register(User, CustomUserAdmin)

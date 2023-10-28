@@ -138,3 +138,19 @@ EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
 
 PASSWORD_RESET_CONFIRM_REVERSE = 'password_reset_confirm'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # Уровень логирования (можете выбрать другой)
+            'class': 'logging.FileHandler',
+            'filename': 'django.log',  # Путь к файлу, куда будут записываться логи
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'INFO',
+    },
+}

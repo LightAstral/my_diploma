@@ -3,9 +3,9 @@
 <head>
     {% load static %}
     {% block extra_css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/dashboard.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/buttons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/dashboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/buttons.css' %}">
     {% endblock %}
 
     <!-- Basic -->
@@ -78,57 +78,69 @@
                                         <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
                                             Submit
                                         </button>
-                                        <a class="for-pwd" href="{% url 'solar_hosting:password_reset' %}">Забули свій пароль?</a>
+                                        <a class="for-pwd" href="{% url 'solar_hosting:password_reset' %}">Забули свій
+                                            пароль?</a>
                                     </div>
                                 </div>
-<!--                                {% if messages %}-->
-<!--                                <div class="error-message">-->
-<!--                                    {{ messages }}-->
-<!--                                </div>-->
-<!--                                {% endif %}-->
                             </form>
                         </div>
                         <div class="tab-pane" id="Registration">
-                            <form role="form" class="form-horizontal" method="post" action="{% url 'solar_hosting:registration' %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" id="name" name="username" placeholder="Name" type="text">
+                            <form role="form" class="form-horizontal" method="post"
+                                  action="{% url 'solar_hosting:registration' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="first_name" name="first_name"
+                                               placeholder="First Name" type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" id="email" name="email" placeholder="Email"
-                                           type="email">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="last_name" name="last_name"
+                                               placeholder="Last Name" type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="username" name="username" placeholder="Name"
+                                               type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" id="password1" name="password1" placeholder="Password"
-                                           type="password">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="email" name="email" placeholder="Email"
+                                               type="email">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input class="form-control" id="password2" name="password2"
-                                           placeholder="Repeat Password" type="password">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="phone" name="phone" placeholder="Phone"
+                                               type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-                                        Зберегти та продовжити
-                                    </button>
-                                    <button type="button" class="btn btn-light btn-radius btn-brd grd1">
-                                        Скасувати
-                                    </button>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="password1" name="password1"
+                                               placeholder="Password"
+                                               type="password">
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="password2" name="password2"
+                                               placeholder="Repeat Password" type="password">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+                                            Зберегти та продовжити
+                                        </button>
+                                        <button type="button" class="btn btn-light btn-radius btn-brd grd1">
+                                            Скасувати
+                                        </button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -263,49 +275,47 @@
             </div><!-- end col -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
-                <div class="widget-title">
-                    <h3>Information Link</h3>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Faq</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul><!-- end links -->
-            </div><!-- end clearfix -->
-        </div><!-- end col -->
-        <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class
-            "widget clearfix">
-            <div class="widget-title">
-                <h3>Contact Details</h3>
-            </div>
-            <ul class="footer-links">
-                <li><a href="mailto:#">info@yoursite.com</a></li>
-                <li><a href="#">www.yoursite.com</a></li>
-                <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                <li>+61 3 8376 6284</li>
-            </ul><!-- end links -->
-        </div><!-- end clearfix -->
-    </div><!-- end col -->
-    <div class="col-md-2 col-sm-2 col-xs-12">
-        <div class
-        "widget clearfix">
-        <div class="widget-title">
-            <h3>Social</h3>
-        </div>
-        <ul class="footer-links">
-            <li><a href="#"><i class="fa fa-facebook"></i> 22,543 Likes</a></li>
-            <li><a href="#"><i class="fa fa-github"></i> 128 Projects</a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i> 12,860 Followers</a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i> 3,312 Shots</a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i> 3,331 Pins</a></li>
-        </ul><!-- end links -->
-    </div><!-- end clearfix -->
-    </div><!-- end col -->
-    </div><!-- end row -->
+                    <div class="widget-title">
+                        <h3>Information Link</h3>
+                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Contact Details</h3>
+                    </div>
+                    <ul class="footer-links">
+                        <li><a href="mailto:#">info@yoursite.com</a></li>
+                        <li><a href="#">www.yoursite.com</a></li>
+                        <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
+                        <li>+61 3 8376 6284</li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Social</h3>
+                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa fa-facebook"></i> 22,543 Likes</a></li>
+                        <li><a href="#"><i class="fa fa-github"></i> 128 Projects</a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i> 12,860 Followers</a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i> 3,312 Shots</a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i> 3,331 Pins</a></li>
+                    </ul><!-- end links -->
+                </div><!-- end clearfix -->
+            </div><!-- end col -->
+        </div><!-- end row -->
     </div><!-- end container -->
 </footer><!-- end footer -->
 <div class="copyrights">
