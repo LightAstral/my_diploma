@@ -1,28 +1,30 @@
 {% extends "solar_hosting/base.html" %}
 
 {% block extra_css %}
-    {% load static %}
-    {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/profile-style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/my_style.css' %}">
+{% load static %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/profile-style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/my_style.css' %}">
 
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-3">
-            <div class="menu">
-                <ul>
-                    <li><a href="{% url 'solar_hosting:profile' %}" style="color: black;">Мій профіль</a></li>
-                    <li><a href="{% url 'solar_hosting:settings' %}" style="color: black;">Налаштування</a></li>
-                </ul>
-            </div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'solar_hosting:profile' %}" style="color: black;">Мій профіль</a></li>
+                <li><a href="{% url 'solar_hosting:settings' %}" style="color: black;">Налаштування</a></li>
+            </ul>
         </div>
+    </div>
         <div class="col-md-9">
             {% block dashboard_content %}
-                <h2>Ласкаво просимо до особистого кабінету</h2>
-                <p>Це захищена зона, доступ до якої мають лише зареєстровані користувачі.</p>
+            <h2>Ласкаво просимо до особистого кабінету</h2>
+            <p>Це захищена зона, доступ до якої мають лише зареєстровані користувачі.</p>
             {% endblock %}
         </div>
     </div>
+
 {% endblock %}
