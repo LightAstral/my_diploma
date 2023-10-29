@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "solar_hosting/base.html" %}
 
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <h2>Оформлення покупки</h2>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Добавьте поля для ввода информации о покупке (например, выбор плана, период и т. д.) -->
+        <button type="submit" class="btn btn-primary">Оформити покупку</button>
+    </form>
+</div>
+{% endblock %}
