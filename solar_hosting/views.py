@@ -1,11 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
-from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm, TestimonialCommentForm
+from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
-from .models import HostingPlan, HostingPurchase, Testimonial, TestimonialComment
+from .models import HostingPlan, HostingPurchase
 
 logger = logging.getLogger(__name__)
 
@@ -190,24 +190,3 @@ def purchase(request):
 def purchase_history(request):
     purchases = HostingPurchase.objects.filter(user=request.user)
     return render(request, 'solar_hosting/purchase_history.html', {'purchases': purchases})
-
-
-def testimonials(request):
-    # Ваш существующий код для отображения тестимониалов
-
-    if request.method == 'POST':
-        comment_form = TestimonialCommentForm(request.POST)
-        if comment_form.is_valid():
-            # Создание нового комментария
-            new_comment = comment_form.save(commit=False)
-            new_comment.user = request.user
-            new_comment.testimonial = testimonial  # Замените 'testimonial' на тестимониал, к которому создается комментарий
-            new_comment.save()
-            return redirect('solar_hosting:testimonials')  # Перенаправление обратно на страницу тестимониалов
-
-    else:
-        comment_form = TestimonialCommentForm()
-
-    # Ваш существующий код для отображения тестимониалов
-
-    return render(request, 'solar_hosting/testimonials.html', {'comment_form': comment_form})

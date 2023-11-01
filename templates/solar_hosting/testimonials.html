@@ -101,22 +101,4 @@
 			</div>
 		</div>
     </div><!-- end section -->
-<div class="comment-form">
-        <h3>Add a Comment</h3>
-        <form method="post">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit">Add Comment</button>
-        </form>
-    </div>
-
-    <!-- Список существующих комментариев -->
-    <div class="comment-list">
-        {% for comment in comments %}
-            <div class="comment">
-                <h4>{{ comment.user.username }}</h4>
-                <p>{{ comment.text }}</p>
-            </div>
-        {% endfor %}
-    </div>
 {% endblock %}

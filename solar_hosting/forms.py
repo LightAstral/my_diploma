@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User, HostingPlan, TestimonialComment
+from .models import User, HostingPlan
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 
 
@@ -36,13 +36,3 @@ class PhoneChangeForm(forms.Form):
 
 class PasswordChangeForm(PasswordChangeForm):
     pass
-
-
-class HostingPurchaseForm(forms.Form):
-    plan = forms.ModelChoiceField(queryset=HostingPlan.objects.all(), empty_label=None, label="Select Hosting Plan")
-
-
-class TestimonialCommentForm(forms.ModelForm):
-    class Meta:
-        model = TestimonialComment
-        fields = ['text']  # Укажите поля, которые пользователь может заполнить

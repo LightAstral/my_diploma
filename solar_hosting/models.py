@@ -34,13 +34,3 @@ class HostingPurchase(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.plan.name} ({self.purchase_date})"
-
-
-class TestimonialComment(models.Model):
-    testimonial = models.ForeignKey(Testimonial, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    text = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Comment by {self.user.username} on {self.testimonial}"
