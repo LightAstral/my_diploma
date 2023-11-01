@@ -264,3 +264,278 @@ Not Found: /pricing/uploads/testi_02.png
 Not Found: /pricing/uploads/testi_03.png
 Not Found: /pricing/uploads/parallax_04.jpg
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Internal Server Error: /purchase_history/
+Traceback (most recent call last):
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\views.py", line 192, in purchase_history
+    return render(request, 'solar_hosting/purchase_history.html', {'purchases': purchases})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 30: 'endblock'. Did you forget to register or load this tag?
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_03.png
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /testimonials/uploads/logo_01.png
+Not Found: /features/uploads/parallax_04.jpg
+Not Found: /domain/uploads/parallax_11.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /features/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /features/uploads/parallax_04.jpg
+Not Found: /domain/uploads/parallax_11.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /features/uploads/parallax_04.jpg
+Not Found: /features/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_03.png
+Not Found: /hosting/uploads/testi_01.png
+Not Found: /hosting/uploads/parallax_04.jpg
+Not Found: /hosting/uploads/testi_02.png
+Not Found: /domain/uploads/parallax_11.jpg
+Not Found: /registration/uploads/about_02.jpg
+Not Found: /registration/uploads/hosting_01.jpg
+Not Found: /registration/uploads/hosting_02.jpg
+Not Found: /registration/uploads/testi_03.png
+Not Found: /registration/uploads/testi_02.png
+Not Found: /registration/uploads/testi_01.png
+Not Found: /registration/uploads/hosting_03.jpg
+Not Found: /registration/uploads/parallax_04.jpg
+Not Found: /registration/uploads/parallax_11.jpg
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Личные данные обновлены успешно.

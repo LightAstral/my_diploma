@@ -5,7 +5,13 @@
     <h2>Оформлення покупки</h2>
     <form method="post">
         {% csrf_token %}
-        <!-- Добавьте поля для ввода информации о покупке (например, выбор плана, период и т. д.) -->
+        <div class="form-group">
+            <label for="plan">Виберіть план:</label>
+            {{ form.plan }}
+        </div>
+
+        <!-- Другие поля для ввода информации о покупке (период, количество и т. д.) -->
+
         <button type="submit" class="btn btn-primary">Оформити покупку</button>
     </form>
 </div>

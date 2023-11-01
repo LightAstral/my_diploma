@@ -1,0 +1,34 @@
+
+    .user-profile {
+        background-color: #f3f3f3;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+    }
+
+    .user-profile h2 {
+        color: #333;
+        font-size: 16px;
+    }
+
+    .user-profile p {
+        color: #666;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    /* Пример стилизации для разных элементов */
+    .user-profile strong {
+        color: #3498db; /* Зеленый цвет для текста в strong теге */
+    }
+
+    /* Стилизация для каждого поля профиля */
+    .user-profile .user-info {
+        margin-bottom: 20px;
+    }
+
+    .user-profile .user-info h4 {
+        font-size: 12px;
+        margin: 10px 0;
+    }

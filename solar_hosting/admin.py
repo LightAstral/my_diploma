@@ -10,7 +10,7 @@
 #     list_display = ('username', 'email', 'phone')
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User
+from .models import User, HostingPlan, HostingPurchase
 
 
 class CustomUserAdmin(UserAdmin):
@@ -19,3 +19,5 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(User, CustomUserAdmin)
+admin.site.register(HostingPlan)
+admin.site.register(HostingPurchase)

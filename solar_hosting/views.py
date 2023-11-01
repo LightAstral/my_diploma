@@ -1,10 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
-from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm
+from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm, TestimonialCommentForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
+from .models import HostingPlan, HostingPurchase, Testimonial, TestimonialComment
 
 logger = logging.getLogger(__name__)
 
@@ -100,7 +101,6 @@ def logout_view(request):
     return redirect('solar_hosting:main')
 
 
-
 @login_required
 def change_settings(request):
     profile_form = CustomUserCreationForm(instance=request.user)
@@ -157,3 +157,57 @@ def change_settings(request):
         'password_form': password_form,
     })
 
+
+def purchase(request):
+    if request.method == 'POST':
+        form = HostingPurchaseForm(request.POST)
+        if form.is_valid():
+            selected_plan = form.cleaned_data['plan']
+
+            # В этой части кода вы проверяете, какой именно план выбрал пользователь
+            if selected_plan.plan_id == 'basic':
+                # Выполняете действия для Basic Plan
+                # Например, создаете экземпляр HostingPurchase и сохраняете его в базе данных
+                purchase = HostingPurchase(user=request.user, plan=selected_plan)
+                purchase.save()
+            elif selected_plan.plan_id == 'premium':
+                # Выполняете действия для Premium Plan
+                # Аналогично создаете и сохраняете информацию о покупке
+                purchase = HostingPurchase(user=request.user, plan=selected_plan)
+                purchase.save()
+            elif selected_plan.plan_id == 'ultimate':
+                # Выполняете действия для Ultimate Plan
+                # Создаете и сохраняете информацию о покупке
+                purchase = HostingPurchase(user=request.user, plan=selected_plan)
+                purchase.save()
+
+            return render(request, 'solar_hosting/purchase_confirmation.html', {'purchase': purchase})
+    else:
+        form = HostingPurchaseForm()
+    return render(request, 'solar_hosting/purchase.html', {'form': form})
+
+
+def purchase_history(request):
+    purchases = HostingPurchase.objects.filter(user=request.user)
+    return render(request, 'solar_hosting/purchase_history.html', {'purchases': purchases})
+
+
+def testimonials(request):
+    # Ваш существующий код для отображения тестимониалов
+
+    if request.method == 'POST':
+        comment_form = TestimonialCommentForm(request.POST)
+        if comment_form.is_valid():
+            # Создание нового комментария
+            new_comment = comment_form.save(commit=False)
+            new_comment.user = request.user
+            new_comment.testimonial = testimonial  # Замените 'testimonial' на тестимониал, к которому создается комментарий
+            new_comment.save()
+            return redirect('solar_hosting:testimonials')  # Перенаправление обратно на страницу тестимониалов
+
+    else:
+        comment_form = TestimonialCommentForm()
+
+    # Ваш существующий код для отображения тестимониалов
+
+    return render(request, 'solar_hosting/testimonials.html', {'comment_form': comment_form})

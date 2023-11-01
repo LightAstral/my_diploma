@@ -1,59 +1,6 @@
 {% extends 'solar_hosting/dashboard.html' %}
 
 {% block dashboard_content %}
-
-<style>
-    .user-settings {
-        background-color: #f3f3f3;
-        padding: 5px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 5px;
-        text-align: center;
-    }
-
-    .user-settings h2 {
-        color: #333;
-        font-size: 16px;
-        margin-bottom: 3px;
-    }
-
-    .user-settings p {
-        color: #666;
-        font-size: 12px;
-        margin: 2px 0;
-    }
-
-    .user-settings .data-display {
-        display: block;
-    }
-
-    .user-settings .data-edit {
-        display: none;
-    }
-
-    .user-settings .edit-button,
-    .user-settings .save-button {
-        display: block;
-        background-color: #3498db;
-        color: white;
-        border: none;
-        border-radius: 5px; /* Меньшие круглые углы */
-        padding: 3px 6px; /* Меньший внутренний отступ */
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 10px; /* Меньший размер шрифта */
-        margin: 2px;
-        cursor: pointer;
-    }
-
-    .user-settings .edit-button:hover,
-    .user-settings .save-button:hover {
-        background-color: #45a049;
-    }
-</style>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -66,6 +13,7 @@
         });
     });
 </script>
+
 
 <div class="user-settings">
     <h4>Настройки пользователя</h4>

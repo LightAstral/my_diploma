@@ -5,7 +5,9 @@
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/profile-style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/my_style.css' %}">
-
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/settings.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/profile.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/purchase_history.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,7 +17,8 @@
         <div class="menu">
             <ul>
                 <li><a href="{% url 'solar_hosting:profile' %}" style="color: black;">Мій профіль</a></li>
-                <li><a href="{% url 'solar_hosting:settings' %}" style="color: black;">Налаштування</a></li>
+                <li><a href="{% url 'solar_hosting:settings' %}" style="color: black;">Налаштування профілю</a></li>
+                <li><a href="{% url 'solar_hosting:purchase_history' %}" style="color: black;">Історія покупок</a></li>
             </ul>
         </div>
     </div>

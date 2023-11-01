@@ -1,0 +1,9 @@
+{% extends "solar_hosting/base.html" %}
+{% block content %}
+
+<h1>Purchase Confirmation</h1>
+<p>Congratulations! You have successfully purchased the following hosting plan:</p>
+<p><strong>Plan Name:</strong> {{ purchase.plan.name }}</p>
+<p><strong>Purchase Date:</strong> {{ purchase.purchase_date }}</p>
+
+{% endblock %}

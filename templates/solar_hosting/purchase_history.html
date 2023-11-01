@@ -1,0 +1,28 @@
+{% extends "solar_hosting/dashboard.html" %}
+{% block dashboard_content %}
+
+<div class="container">
+    <h1 class="mb-4">История покупок</h1>
+    {% if purchases %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Название плана</th>
+                    <th scope="col">Дата покупки</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for purchase in purchases %}
+                    <tr>
+                        <td>{{ purchase.plan.name }}</td>
+                        <td>{{ purchase.purchase_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Вы пока не совершили ни одной покупки.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -195,13 +195,13 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'solar_hosting:main' %}">Дім</a></li>
+                    <li><a href="{% url 'solar_hosting:main' %}">Домівка</a></li>
                     <li><a href="{% url 'solar_hosting:features' %}">Особливості</a></li>
                     <li><a href="{% url 'solar_hosting:domain' %}">Домен</a></li>
                     <li><a href="{% url 'solar_hosting:hosting' %}">Хостинг</a></li>
                     <li><a href="{% url 'solar_hosting:pricing' %}">Ціноутворення</a></li>
                     <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>
-                    <li><a href="{% url 'solar_hosting:contact' %}">Контакт</a></li>
+                    <li><a href="{% url 'solar_hosting:contact' %}">Контакти</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
@@ -219,7 +219,7 @@
                     </li>
                     {% else %}
                     <li><a class="btn-light btn-radius btn-brd log" href="#" data-toggle="modal" data-target="#login"><i
-                            class="flaticon-padlock"></i> Customer Login</a></li>
+                            class="flaticon-padlock"></i> Вхід клієнта </a></li>
                     {% endif %}
                 </ul>
 
@@ -255,7 +255,7 @@
     </div><!-- end container -->
 </div><!-- end section -->
 <section class="section nopad cac text-center">
-    <a href="#"><h3>Interesting our awesome web design services? Just drop an email to us and get a quote for free!</h3>
+    <a href="#"><h3>Цікавлять наші чудові послуги соняшного хостінгу? Просто надішліть нам електронного листа та отримайте інформацію безкоштовно!</h3>
     </a>
 </section>
 <footer class="footer">
@@ -265,53 +265,50 @@
                 <div class="widget clearfix">
                     <div class="widget-title">
                         <img src="{% static 'solar_hosting/images/logos/logo-hosting-light.png' %}" alt="">
-                        <small>Web Hosting Template</small>
+<!--                        <small>Web Hosting Template</small>-->
                     </div>
-                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus
-                        bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis
-                        montes.</p>
-                    <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
+<!--                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus-->
+<!--                        bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis-->
+<!--                        montes.</p>-->
+<!--                    <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>-->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Information Link</h3>
+                        <h3>Інформаційне посилання</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Домівка</a></li>
+                        <li><a href="#">Ціноутворення</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Часті запитання</a></li>
+                        <li><a href="#">Контактні дані</a></li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Contact Details</h3>
+                        <h3>Контактні дані</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="mailto:#">info@yoursite.com</a></li>
-                        <li><a href="#">www.yoursite.com</a></li>
-                        <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                        <li>+61 3 8376 6284</li>
+                        <li><a href="mailto:#">info@solarhosting.com</a></li>
+                        <li><a href="#">solarhosting.com</a></li>
+                        <li>Україна, Дніпро 49000</li>
+                        <li>+380997775511</li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
             <div class="col-md-2 col-sm-2 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Social</h3>
+                        <h3>Соціальний</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fa fa-facebook"></i> 22,543 Likes</a></li>
-                        <li><a href="#"><i class="fa fa-github"></i> 128 Projects</a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> 12,860 Followers</a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i> 3,312 Shots</a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i> 3,331 Pins</a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i> 22,543 Лайки</a></li>
+                        <li><a href="#"><i class="fa fa-github"></i> 128 Проекти</a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i> 12,860 Підписники</a></li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
@@ -322,15 +319,15 @@
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-left">
-                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">HostCloud</a> Design By : <a
-                        href="https://solarhosting.in.ua/">Solar Hosting</a></p>
+                <p class="footer-company-name">Усі права захищені. &copy; 20238 <a href="#">SHosting</a> дизайн від : <a
+                        href="https://solarhosting.com/">Solar Hosting</a></p>
             </div>
-            <div class="footer-right">
-                <form method="get" action="#">
-                    <input placeholder="Subscribe to our newsletter.." name="search">
-                    <i class="fa fa-envelope-o"></i>
-                </form>
-            </div>
+<!--            <div class="footer-right">-->
+<!--                <form method="get" action="#">-->
+<!--                    <input placeholder="Subscribe to our newsletter.." name="search">-->
+<!--                    <i class="fa fa-envelope-o"></i>-->
+<!--                </form>-->
+<!--            </div>-->
         </div>
     </div><!-- end container -->
 </div><!-- end copyrights -->
