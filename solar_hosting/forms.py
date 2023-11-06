@@ -36,3 +36,7 @@ class PhoneChangeForm(forms.Form):
 
 class PasswordChangeForm(PasswordChangeForm):
     pass
+
+
+class HostingPurchaseForm(forms.Form):
+    plan = forms.ModelChoiceField(queryset=HostingPlan.objects.all(), empty_label=None, label="Select Hosting Plan")

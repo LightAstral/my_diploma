@@ -553,3 +553,54 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Internal Server Error: /purchase/
+Traceback (most recent call last):
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\views.py", line 186, in purchase
+    form = HostingPurchaseForm()
+           ^^^^^^^^^^^^^^^^^^^
+NameError: name 'HostingPurchaseForm' is not defined
+Watching for file changes with StatReloader
+C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/parallax_04.jpg
+Internal Server Error: /purchase/
+Traceback (most recent call last):
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\views.py", line 186, in purchase
+    form = HostingPurchaseForm()
+           ^^^^^^^^^^^^^^^^^^^
+NameError: name 'HostingPurchaseForm' is not defined
+C:\Users\Astral\PycharmProjects\pythonProject5\my_dyplome_project\solar_powered_hosting\solar_hosting\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/testi_02.png
+Not Found: /pricing/uploads/testi_01.png
+Not Found: /pricing/uploads/testi_03.png
+Not Found: /pricing/uploads/parallax_04.jpg
