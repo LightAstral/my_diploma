@@ -1,11 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
-from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm
+from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm, \
+    DomainPurchaseForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
-from .models import HostingPlan, HostingPurchase
+from .models import HostingPlan, HostingPurchase, DomainPurchase
 
 logger = logging.getLogger(__name__)
 
@@ -187,6 +189,46 @@ def purchase(request):
     return render(request, 'solar_hosting/purchase.html', {'form': form})
 
 
+@login_required
 def purchase_history(request):
-    purchases = HostingPurchase.objects.filter(user=request.user)
-    return render(request, 'solar_hosting/purchase_history.html', {'purchases': purchases})
+    hosting_purchases = HostingPurchase.objects.filter(user=request.user)
+    domain_purchases = DomainPurchase.objects.filter(user=request.user)
+    return render(request, 'solar_hosting/purchase_history.html', {
+        'hosting_purchases': hosting_purchases,
+        'domain_purchases': domain_purchases,
+    })
+
+
+@login_required
+def purchase_domain(request):
+    if request.method == 'POST':
+        form = DomainPurchaseForm(request.POST)
+        if form.is_valid():
+            domain_name = form.cleaned_data['domain_name']
+
+            # Проверка, существует ли уже такой домен в базе данных
+            if DomainPurchase.objects.filter(user=request.user, domain_name=domain_name).exists():
+                # Если домен уже существует, добавьте сообщение об ошибке
+                messages.error(request, 'This domain is already purchased by you.')
+            else:
+                # Здесь вы можете выполнить действия для покупки домена, например, создать экземпляр DomainPurchase
+                # и сохранить его в базе данных
+                domain_purchase = DomainPurchase(user=request.user, domain_name=domain_name)
+                domain_purchase.save()
+
+                # Перенаправьте пользователя на страницу подтверждения после покупки
+                return render(request, 'solar_hosting/purchase_domain_confirmation.html',
+                              {'domain_purchase': domain_purchase})
+
+    else:
+        form = DomainPurchaseForm()
+
+    return render(request, 'solar_hosting/purchase_domain.html', {'form': form})
+
+
+@login_required
+def purchase_domain_confirmation(request):
+    # Здесь вы можете выполнить действия для страницы подтверждения покупки домена
+    # Например, получить информацию о покупке, если это необходимо
+
+    return render(request, 'solar_hosting/purchase_domain_confirmation.html')

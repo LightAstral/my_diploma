@@ -3,7 +3,8 @@
 
 <div class="container">
     <h1 class="mb-4">История покупок</h1>
-    {% if purchases %}
+    <h2 class="mb-4">История покупок хостинга</h2>
+    {% if hosting_purchases %}
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -12,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for purchase in purchases %}
+                {% for purchase in hosting_purchases %}
                     <tr>
                         <td>{{ purchase.plan.name }}</td>
                         <td>{{ purchase.purchase_date }}</td>
@@ -21,7 +22,29 @@
             </tbody>
         </table>
     {% else %}
-        <p>Вы пока не совершили ни одной покупки.</p>
+        <p>Вы пока не совершили ни одной покупки хостинга.</p>
+    {% endif %}
+
+    <h2 class="mb-4">История покупок доменов</h2>
+    {% if domain_purchases %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Доменное имя</th>
+                    <th scope="col">Дата покупки</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for purchase in domain_purchases %}
+                    <tr>
+                        <td>{{ purchase.domain_name }}</td>
+                        <td>{{ purchase.purchase_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Вы пока не совершили ни одной покупки доменов.</p>
     {% endif %}
 </div>
 

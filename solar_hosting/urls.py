@@ -27,4 +27,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('purchase/', views.purchase, name='purchase'),
     path('purchase_history/', views.purchase_history, name='purchase_history'),
+    path('purchase_domain/', views.purchase_domain, name='purchase_domain'),
+    path('purchase_domain_confirmation/', views.purchase_domain_confirmation, name='purchase_domain_confirmation'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

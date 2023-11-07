@@ -1,0 +1,11 @@
+{% extends "solar_hosting/dashboard.html" %}
+{% block dashboard_content %}
+
+<div class="container">
+    <h2>Purchase Confirmation</h2>
+    <p>Congratulations! You have successfully purchased the following domain:</p>
+    <p><strong>Domain Name:</strong> {{ domain_purchase.domain_name }}</p>
+    <p><strong>Purchase Date:</strong> {{ domain_purchase.purchase_date }}</p>
+    <!-- Добавьте здесь другие детали покупки, если необходимо -->
+</div>
+{% endblock %}

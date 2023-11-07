@@ -40,3 +40,7 @@ class PasswordChangeForm(PasswordChangeForm):
 
 class HostingPurchaseForm(forms.Form):
     plan = forms.ModelChoiceField(queryset=HostingPlan.objects.all(), empty_label=None, label="Select Hosting Plan")
+
+
+class DomainPurchaseForm(forms.Form):
+    domain_name = forms.CharField(max_length=255, label="Enter domain name")

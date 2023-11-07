@@ -1,0 +1,22 @@
+{% extends "solar_hosting/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
+    <h2>Domain Purchase</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Purchase Domain</button>
+    </form>
+</div>
+{% endblock %}
