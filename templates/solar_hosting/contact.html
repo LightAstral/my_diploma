@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="contact_form">
-                    <form id="contactform" class="row" action="{% url 'solar_hosting:contact_success' %}" name="contactform"
+                    <form id="contactform" class="row" action="{% url 'solar_hosting:contact_view' %}" name="contactform"
                           method="post">
                         {% csrf_token %}
                         <fieldset class="row-fluid">

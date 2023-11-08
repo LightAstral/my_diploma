@@ -7,8 +7,8 @@ from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, Nam
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
-from .models import HostingPlan, HostingPurchase, DomainPurchase
-from solar_hosting.models import ContactMessage
+from .models import HostingPlan, HostingPurchase, DomainPurchase, ContactMessage
+
 logger = logging.getLogger(__name__)
 
 
@@ -234,12 +234,31 @@ def purchase_domain_confirmation(request):
     return render(request, 'solar_hosting/purchase_domain_confirmation.html')
 
 
+# def contact_view(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('contact_success')
+#     else:
+#         form = ContactForm()
+#     return render(request, 'solar_hosting/contact.html', {'form': form})
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('contact_success')
+            data = form.cleaned_data
+            message = ContactMessage(
+                first_name=data['first_name'],
+                last_name=data['last_name'],
+                email=data['email'],
+                phone=data['phone'],
+                comments=data['comments']
+            )
+            message.save()
+            form.save()  # Сохранить данные из формы
+            return redirect('solar_hosting:contact_success')
     else:
         form = ContactForm()
     return render(request, 'solar_hosting/contact.html', {'form': form})
