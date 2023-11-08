@@ -200,7 +200,7 @@
                     <li><a href="{% url 'solar_hosting:domain' %}">Домен</a></li>
                     <li><a href="{% url 'solar_hosting:hosting' %}">Хостинг</a></li>
                     <li><a href="{% url 'solar_hosting:pricing' %}">Ціноутворення</a></li>
-                    <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>
+<!--                    <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>-->
                     <li><a href="{% url 'solar_hosting:contact' %}">Контакти</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -279,11 +279,11 @@
                         <h3>Інформаційне посилання</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="#">Домівка</a></li>
-                        <li><a href="#">Ціноутворення</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Часті запитання</a></li>
-                        <li><a href="#">Контактні дані</a></li>
+                        <li><a href="{% url 'solar_hosting:main' %}">Домівка</a></li>
+                        <li><a href="{% url 'solar_hosting:pricing' %}">Ціноутворення</a></li>
+<!--                        <li><a href="#">О нас</a></li>-->
+<!--                        <li><a href="#">Часті запитання</a></li>-->
+                        <li><a href="{% url 'solar_hosting:contact' %}">Контактні дані</a></li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
@@ -306,9 +306,9 @@
                         <h3>Соціальний</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fa fa-facebook"></i> 22,543 Лайки</a></li>
-                        <li><a href="#"><i class="fa fa-github"></i> 128 Проекти</a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> 12,860 Підписники</a></li>
+                        <li><a href="https://www.facebook.com/search/top?q=hosting"><i class="fa fa-facebook"></i> 22,543 Лайки</a></li>
+                        <li><a href="https://github.com/"><i class="fa fa-github"></i> 128 Проекти</a></li>
+                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i> 12,860 Підписники</a></li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->

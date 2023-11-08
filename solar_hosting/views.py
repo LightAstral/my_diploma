@@ -254,10 +254,11 @@ def contact_view(request):
                 last_name=data['last_name'],
                 email=data['email'],
                 phone=data['phone'],
-                comments=data['comments']
+                comments=data['comments'],
+                read=False
             )
             message.save()
-            form.save()  # Сохранить данные из формы
+            # form.save()  # Сохранить данные из формы
             return redirect('solar_hosting:contact_success')
     else:
         form = ContactForm()

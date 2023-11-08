@@ -1,0 +1,56 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="{% static 'admin/js/jquery.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setInterval(function() {
+                $.get("{% url 'admin:contactmessage_unread_count' %}", function(data) {
+                    $('#unread_count').text(data.unread_count);
+                });
+            }, 10000); // Обновлять каждые 10 секунд (по желанию)
+        });
+    </script>
+{% endblock %}
+
+{% block coltype %}
+    <div id="content" class="colMS" role="main">
+        {% if messages %}
+            <div id="content-main">
+                <div class="messages">
+                    <h2>Site administration</h2>
+                    <ul class="messagelist">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                <span class="title">{{ message.level|capfirst }}</span>
+                                {{ message }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="colMS" role="main">
+        <div class="app-{{ app_name }} module">
+            <h1>Django administration</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h2>Site administration</h2>
+                    </td>
+                    <td style="text-align:right; padding-right:10px;">
+                        <span class="user-tools">
+                            <a href="{% url 'admin:solar_hosting_contactmessage_changelist' %}?read__exact=0">
+                                Unread Messages (<span id="unread_count">0</span>)
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
