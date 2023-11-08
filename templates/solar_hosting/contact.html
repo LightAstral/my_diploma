@@ -11,41 +11,42 @@
 <div id="support" class="section wb">
     <div class="container">
         <div class="section-title text-center">
-            <h3>Need Help? Sure we are Online!</h3>
-            <p class="lead">Let us give you more details about the special offer website you want us. Please fill out
-                the form below. <br>We have million of website owners who happy to work with us!</p>
+            <h3>Потрібна допомога? Звичайно, ми онлайн!</h3>
+            <p class="lead">Дозвольте нам надати вам більше інформації про веб-сайт спеціальної пропозиції, який ви
+                хочете отримати. Будь ласка, заповніть форму нижче. <br>У нас є мільйони власників сайтів, які раді з нами працювати!</p>
         </div><!-- end title -->
 
         <div class="row">
             <div class="col-md-12">
                 <div class="contact_form">
-                    <form id="contactform" class="row" action="{% url 'solar_hosting:contact_view' %}" name="contactform"
+                    <form id="contactform" class="row" action="{% url 'solar_hosting:contact_view' %}"
+                          name="contactform"
                           method="post">
                         {% csrf_token %}
                         <fieldset class="row-fluid">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" name="first_name" id="first_name" class="form-control"
-                                       placeholder="First Name">
+                                       placeholder="Ім'я">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" name="last_name" id="last_name" class="form-control"
-                                       placeholder="Last Name">
+                                       placeholder="Призвіще">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <input type="email" name="email" id="email" class="form-control"
-                                       placeholder="Your Email">
+                                       placeholder="Електронна пошта">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" name="phone" id="phone" class="form-control"
-                                       placeholder="Your Phone">
+                                       placeholder="Номер телефону">
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <textarea class="form-control" name="comments" id="comments" rows="6"
-                                          placeholder="Give us more details.."></textarea>
+                                          placeholder="Опішіть більш детальніше.."></textarea>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                                 <button type="submit" value="SEND" id="submit"
-                                        class="btn btn-light btn-radius btn-brd grd1 btn-block">Get a Quote
+                                        class="btn btn-light btn-radius btn-brd grd1 btn-block">Віправити
                                 </button>
                             </div>
                         </fieldset>
