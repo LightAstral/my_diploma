@@ -255,7 +255,7 @@
     </div><!-- end container -->
 </div><!-- end section -->
 <section class="section nopad cac text-center">
-    <a href="#"><h3>Цікавлять наші чудові послуги соняшного хостінгу? Просто надішліть нам електронного листа та отримайте інформацію безкоштовно!</h3>
+    <a href="{% url 'solar_hosting:contact' %}"><h3>Цікавлять наші чудові послуги соняшного хостінгу? Просто надішліть нам електронного листа та отримайте інформацію безкоштовно!</h3>
     </a>
 </section>
 <footer class="footer">
@@ -264,7 +264,9 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <img src="{% static 'solar_hosting/images/logos/logo-hosting-light.png' %}" alt="">
+                        <a class="navbar-brand" href="{% url 'solar_hosting:main' %}"><img
+                        src="{% static 'solar_hosting/images/logos/logo-hosting-light.png' %}"
+                        alt="image"></a>
 <!--                        <small>Web Hosting Template</small>-->
                     </div>
 <!--                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus-->
@@ -319,8 +321,8 @@
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-left">
-                <p class="footer-company-name">Усі права захищені. &copy; 20238 <a href="#">SHosting</a> дизайн від : <a
-                        href="https://solarhosting.com/">Solar Hosting</a></p>
+                <p class="footer-company-name">Усі права захищені. &copy; 20238 <a href="#">S-Hosting</a> дизайн від : <a
+                        href="https://s-hosting.com/">Solar Hosting</a></p>
             </div>
 <!--            <div class="footer-right">-->
 <!--                <form method="get" action="#">-->

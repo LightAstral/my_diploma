@@ -1,114 +1,33 @@
 {% extends "solar_hosting/base.html" %}
 <!--{% load static %}-->
 {% block extra_css %}
-    {{ block.super }} {# Подключите другие CSS-файлы, если необходимо #}
-    <link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
+{{ block.super }} {# Подключите другие CSS-файлы, если необходимо #}
+<link rel="stylesheet" type="text/css" href="{% static 'solar_hosting/css/error_messages.css' %}">
 {% endblock %}
 
 {% block content %}
-    {% if messages %}
-        <div class="error-messages">
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel"
-     data-pause="hover" data-interval="false">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-        <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-        <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div id="home" class="first-section" style="background-image:url('/uploads/slider-01.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 text-center">
-                            <div class="big-tagline">
-                                <img src="{% static 'solar_hosting/images/logos/logo-hosting.png' %}" alt="image">
-                                <h2 data-animation="animated zoomInRight">Best <strong>Solar Hosting</strong> Company
-                                </h2>
-                                <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing
-                                    page template, you can promote your all hosting, domain and email services. </p>
-                                <a data-scroll href="{% url 'solar_hosting:purchase_domain' %}"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInLeft">View Plans</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a data-scroll href="#overviews"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInRight">All Features</a>
-                            </div>
-                        </div>
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
-        </div>
-        <div class="item">
-            <div id="home" class="first-section" style="background-image:url('/uploads/slider-02.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 text-center">
-                            <div class="big-tagline">
-                                <img src="{% static 'solar_hosting/images/logos/logo-hosting.png' %}" alt="image">
-                                <h2 data-animation="animated zoomInRight">Find the right <strong>Hosting</strong></h2>
-                                <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing
-                                    page template, you can promote your all hosting, domain and email services. </p>
-                                <a data-scroll href="#pricing"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInLeft">View Plans</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a data-scroll href="#overviews"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInRight">All Features</a>
-                            </div>
-                        </div>
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
-        </div>
-        <div class="item">
-            <div id="home" class="first-section" style="background-image:url('/uploads/slider-03.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 text-center">
-                            <div class="big-tagline">
-                                <img src="{% static 'solar_hosting/images/logos/logo-hosting.png' %}" alt="image">
-                                <h2 data-animation="animated zoomInRight">Best <strong>VPS Servers</strong> Company</h2>
-                                <p class="lead" data-animation="animated fadeInLeft">1 IP included with each server
-                                    (more on request to justification)
-                                    Your Choice of any OS (CentOS, Windows, Debian, Fedora)
-                                    FREE Reboots</p>
-                                <a data-scroll href="#pricing"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInLeft">View Plans</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a data-scroll href="#overviews"
-                                   class="btn btn-light btn-radius btn-brd effect-1 slide-btn"
-                                   data-animation="animated fadeInRight">All Features</a>
-                            </div>
-                        </div>
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
-        </div>
-        <!-- Left Control -->
-        <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
-            <span class="fa fa-angle-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-
-        <!-- Right Control -->
-        <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
-            <span class="fa fa-angle-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+{% if messages %}
+<div class="error-messages">
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
 </div>
+{% endif %}
+<div id="home" class="first-section" style="background-image: url('uploads/slider-03-new.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <div class="big-tagline">
+                    <h2>Найкращий Сонячний Хостинг для Вашого Веб-Проекту</h2>
+                    <p class="lead">Вибирай найкращих!</p>
+                    <!-- Добавьте здесь любые другие элементы или кнопки, которые вам нужны -->
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
 <div id="overviews" class="section wb">
     <div class="container">
         <div class="section-title row text-center">
@@ -131,15 +50,16 @@
                     <p> Відповідальність перед середовищем: Використовуючи сонячну енергію,
                         ми допомагаємо зменшити викиди вуглецю та сприяємо збереженню природних ресурсів. </p>
 
-<!--                    <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn-->
-<!--                        More</a>-->
+                    <!--                    <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn-->
+                    <!--                        More</a>-->
                 </div><!-- end messagebox -->
             </div><!-- end col -->
 
             <div class="col-md-6">
                 <div class="post-media wow fadeIn">
                     <img alt="img" class="img-responsive img-rounded" src="uploads/about_02.jpg">
-                    <a class="playbutton" data-rel="prettyPhoto[gal]" href="https://www.youtube.com/watch?v=qjk6z-xvdH4"><i
+                    <a class="playbutton" data-rel="prettyPhoto[gal]"
+                       href="https://www.youtube.com/watch?v=qjk6z-xvdH4"><i
                             class="flaticon-play-button"></i></a>
                 </div><!-- end media -->
             </div><!-- end col -->
@@ -180,7 +100,8 @@
                 <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <i class="flaticon-cup global-radius effect-1 alignleft"></i>
                     <h3>Підтримка переможців</h3>
-                    <p>Ми надаємо підтримку переможцям нагород і робимо все можливе, щоб ваш сайт виглядав вражаюче та працював на високому рівні!</p>
+                    <p>Ми надаємо підтримку переможцям нагород і робимо все можливе, щоб ваш сайт виглядав вражаюче та
+                        працював на високому рівні!</p>
                 </div><!-- end icon-wrapper -->
             </div><!-- end col -->
 
@@ -196,7 +117,8 @@
                 <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <i class="flaticon-locked global-radius effect-1 alignleft"></i>
                     <h3>Високий рівень безпеки</h3>
-                    <p>Ми гарантуємо високий рівень безпеки, захищаючи ваші дані та інформацію від потенційних загроз!</p>
+                    <p>Ми гарантуємо високий рівень безпеки, захищаючи ваші дані та інформацію від потенційних
+                        загроз!</p>
                 </div><!-- end icon-wrapper -->
             </div><!-- end col -->
         </div><!-- end row -->
@@ -212,11 +134,12 @@
                     <h1>Знайдіть свій домен</h1>
                     <p>З легкістю знайдіть та зарезервуйте ідеальний домен для вашого проекту чи бізнесу.</p>
                     <ul class="list-inline">
-                        <li><i class="fa fa-check"></i> 5k Доменов продано у  2023 році</li>
+                        <li><i class="fa fa-check"></i> 5k Доменов продано у 2023 році</li>
                         <li><i class="fa fa-check"></i> 4k Веб-сайтів створено</li>
                     </ul>
                     <!-- end list -->
-                    <a href="#hosting" data-scroll class="btn btn-light grd1 effect-1 btn-radius btn-brd">Пакети хостингу</a>
+                    <a href="#hosting" data-scroll class="btn btn-light grd1 effect-1 btn-radius btn-brd">Пакети
+                        хостингу</a>
                 </div>
             </div>
             <!-- end col -->
@@ -276,7 +199,8 @@
                         <small>Starting from $40/month</small>
                     </div>
                     <!-- end title -->
-                    <p>Наш віртуальний хостинг надає можливість розміщувати ваш веб-сайт на наших серверах з високою продуктивністю та надійністю!</p>
+                    <p>Наш віртуальний хостинг надає можливість розміщувати ваш веб-сайт на наших серверах з високою
+                        продуктивністю та надійністю!</p>
 
                     <hr>
 
@@ -293,7 +217,8 @@
 
                     <hr>
 
-                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
+                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                       class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
 
                 </div><!--widget -->
             </div><!-- end col -->
@@ -306,7 +231,9 @@
                         <small>Starting from $80/month</small>
                     </div>
                     <!-- end title -->
-                    <p>Реселлерський хостинг - це ідеальне рішення для тих, хто бажає стати посередником у галузі веб-хостингу та надавати послуги хостингу своїм клієнтам. Ми надаємо можливість створювати та керувати власними хостинг-акаунтами, отримуючи прибуток від цього бізнесу!</p>
+                    <p>Реселлерський хостинг - це ідеальне рішення для тих, хто бажає стати посередником у галузі
+                        веб-хостингу та надавати послуги хостингу своїм клієнтам. Ми надаємо можливість створювати та
+                        керувати власними хостинг-акаунтами, отримуючи прибуток від цього бізнесу!</p>
 
                     <hr>
 
@@ -324,7 +251,8 @@
                     </div>
                     <hr>
 
-                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
+                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                       class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
 
                 </div><!--widget -->
             </div><!-- end col -->
@@ -337,7 +265,9 @@
                         <small>Starting from $120/month</small>
                     </div>
                     <!-- end title -->
-                    <p>Виділений сервер - це ідеальний вибір для бізнесів, які потребують максимальної продуктивності та контролю над своєю веб-інфраструктурою. Наші виділені сервери надають найвищий рівень продуктивності та безпеки, гарантуючи, що ваш веб-сайт завжди працює стабільно та швидко</p>
+                    <p>Виділений сервер - це ідеальний вибір для бізнесів, які потребують максимальної продуктивності та
+                        контролю над своєю веб-інфраструктурою. Наші виділені сервери надають найвищий рівень
+                        продуктивності та безпеки, гарантуючи, що ваш веб-сайт завжди працює стабільно та швидко</p>
 
                     <hr>
 
@@ -357,7 +287,8 @@
                     </div>
                     <hr>
 
-                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
+                    <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                       class="btn btn-light grd1 effect-1 btn-radius btn-brd">Замовити зараз</a>
 
                 </div><!--widget -->
             </div><!-- end col -->
@@ -392,145 +323,162 @@
     </div><!-- end container -->
 </div><!-- end section -->
 
-	<div id="pricing" class="section lb">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Готові почати?</h3>
-                <p class="lead">Подивіться на червону доріжку <strong>всього 39 доларів на місяць!</strong> За оцінками, 3,5 мільйона створено особистими блогами.<br> За оцінками, 3,5 мільйона створено особистими блогами. Один від одного ми ділимося платними темами WordPress WP Service...</p>
-            </div><!-- end title -->
+<div id="pricing" class="section lb">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Готові почати?</h3>
+            <p class="lead">Подивіться на червону доріжку <strong>всього 39 доларів на місяць!</strong> За оцінками, 3,5
+                мільйона створено особистими блогами.<br> За оцінками, 3,5 мільйона створено особистими блогами. Один
+                від одного ми ділимося платними темами WordPress WP Service...</p>
+        </div><!-- end title -->
 
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="message-box">
-                        <ul class="nav nav-pills" id="myTabs">
-                            <li class="active"><a href="#tab1" data-toggle="pill">Щомісячна підписка</a></li>
-                            <li><a href="#tab2" data-toggle="pill">Річна підписка</a></li>
-                        </ul>
-                    </div>
-                </div><!-- end col -->
-            </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="message-box">
+                    <ul class="nav nav-pills" id="myTabs">
+                        <li class="active"><a href="#tab1" data-toggle="pill">Щомісячна підписка</a></li>
+                        <li><a href="#tab2" data-toggle="pill">Річна підписка</a></li>
+                    </ul>
+                </div>
+            </div><!-- end col -->
+        </div>
 
-            <hr class="invis">
+        <hr class="invis">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="tab-content">
-                        <div class="tab-pane active fade in" id="tab1">
-                            <div class="row text-center">
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Віртуальний хостинг</h2>
-                                            <h3>$85/місяць</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної пошти</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
-                                            <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
-                                            <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
-                                        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content">
+                    <div class="tab-pane active fade in" id="tab1">
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <div class="pricing-table pricing-table-highlighted">
+                                    <div class="pricing-table-header grd1">
+                                        <h2>Віртуальний хостинг</h2>
+                                        <h3>$85/місяць</h3>
+                                    </div>
+                                    <div class="pricing-table-space"></div>
+                                    <div class="pricing-table-features">
+                                        <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної
+                                            пошти</p>
+                                        <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
+                                        <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
+                                        <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
+                                        <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка
+                                        </p>
+                                    </div>
+                                    <div class="pricing-table-sign-up">
+                                        <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                                           class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Хостинг WordPress</h2>
-                                            <h3>$59/рік</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-text">
-                                            <p>Це ідеальний вибір для малого бізнесу та стартапів.</p>
-                                        </div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Адреси електронної пошти</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> Зберігання</p>
-                                            <p><i class="fa fa-database"></i> <strong>60</strong> Бази даних</p>
-                                            <p><i class="fa fa-link"></i> <strong>30</strong> Домени</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="pricing-table pricing-table-highlighted">
+                                    <div class="pricing-table-header grd1">
+                                        <h2>Хостинг WordPress</h2>
+                                        <h3>$59/рік</h3>
+                                    </div>
+                                    <div class="pricing-table-space"></div>
+                                    <div class="pricing-table-text">
+                                        <p>Це ідеальний вибір для малого бізнесу та стартапів.</p>
+                                    </div>
+                                    <div class="pricing-table-features">
+                                        <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Адреси електронної
+                                            пошти</p>
+                                        <p><i class="fa fa-rocket"></i> <strong>65GB</strong> Зберігання</p>
+                                        <p><i class="fa fa-database"></i> <strong>60</strong> Бази даних</p>
+                                        <p><i class="fa fa-link"></i> <strong>30</strong> Домени</p>
+                                        <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка
+                                        </p>
+                                    </div>
+                                    <div class="pricing-table-sign-up">
+                                        <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                                           class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Реселлерський хостинг</h2>
-                                            <h3>$85/разово</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної пошти</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
-                                            <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
-                                            <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
-                                        </div>
+                            <div class="col-md-4">
+                                <div class="pricing-table pricing-table-highlighted">
+                                    <div class="pricing-table-header grd1">
+                                        <h2>Реселлерський хостинг</h2>
+                                        <h3>$85/разово</h3>
+                                    </div>
+                                    <div class="pricing-table-space"></div>
+                                    <div class="pricing-table-features">
+                                        <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної
+                                            пошти</p>
+                                        <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
+                                        <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
+                                        <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
+                                        <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка
+                                        </p>
+                                    </div>
+                                    <div class="pricing-table-sign-up">
+                                        <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                                           class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
                                     </div>
                                 </div>
-                            </div><!-- end row -->
-                        </div><!-- end pane -->
+                            </div>
+                        </div><!-- end row -->
+                    </div><!-- end pane -->
 
-                        <div class="tab-pane fade" id="tab2">
-                            <div class="row text-center">
-                                <div class="col-md-6">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Виділений сервер</h2>
-                                            <h3>$85/місяць</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної пошти</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
-                                            <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
-                                            <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
-                                        </div>
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row text-center">
+                            <div class="col-md-6">
+                                <div class="pricing-table pricing-table-highlighted">
+                                    <div class="pricing-table-header grd1">
+                                        <h2>Виділений сервер</h2>
+                                        <h3>$85/місяць</h3>
+                                    </div>
+                                    <div class="pricing-table-space"></div>
+                                    <div class="pricing-table-features">
+                                        <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Адреси електронної
+                                            пошти</p>
+                                        <p><i class="fa fa-rocket"></i> <strong>125GB</strong> Зберігання</p>
+                                        <p><i class="fa fa-database"></i> <strong>140</strong> Бази даних</p>
+                                        <p><i class="fa fa-link"></i> <strong>60</strong> Домени</p>
+                                        <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка
+                                        </p>
+                                    </div>
+                                    <div class="pricing-table-sign-up">
+                                        <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                                           class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зараз</a>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Сервер VPS</h2>
-                                            <h3>$59/місяць</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-text">
-                                            <p>Це ідеальний вибір для малого бізнесу та стартапів.</p>
-                                        </div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Адреси електронної пошти</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> Зберігання</p>
-                                            <p><i class="fa fa-database"></i> <strong>60</strong> Бази даних</p>
-                                            <p><i class="fa fa-link"></i> <strong>30</strong> Домени</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="{% url 'solar_hosting:purchase' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зара</a>
-                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pricing-table pricing-table-highlighted">
+                                    <div class="pricing-table-header grd1">
+                                        <h2>Сервер VPS</h2>
+                                        <h3>$59/місяць</h3>
+                                    </div>
+                                    <div class="pricing-table-space"></div>
+                                    <div class="pricing-table-text">
+                                        <p>Це ідеальний вибір для малого бізнесу та стартапів.</p>
+                                    </div>
+                                    <div class="pricing-table-features">
+                                        <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Адреси електронної
+                                            пошти</p>
+                                        <p><i class="fa fa-rocket"></i> <strong>65GB</strong> Зберігання</p>
+                                        <p><i class="fa fa-database"></i> <strong>60</strong> Бази даних</p>
+                                        <p><i class="fa fa-link"></i> <strong>30</strong> Домени</p>
+                                        <p><i class="fa fa-life-ring"></i> <strong>24/7 Необмежена</strong> Підтримка
+                                        </p>
+                                    </div>
+                                    <div class="pricing-table-sign-up">
+                                        <a href="{% url 'solar_hosting:purchase' %}" data-scroll
+                                           class="btn btn-light btn-radius btn-brd grd1 effect-1">Замовити зара</a>
                                     </div>
                                 </div>
-                            </div><!-- end row -->
-                        </div><!-- end pane -->
-                    </div><!-- end content -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+                            </div>
+                        </div><!-- end row -->
+                    </div><!-- end pane -->
+                </div><!-- end content -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
 
 <!--    <div id="overviews" class="section wb">-->
 <!--    <div class="container">-->

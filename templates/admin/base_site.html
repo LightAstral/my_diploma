@@ -7,7 +7,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             setInterval(function() {
-                $.get("{% url 'admin:contactmessage_unread_count' %}", function(data) {
+                $.get("{% url 'admin:app_list' 'solar_hosting' %}", function(data) {
                     $('#unread_count').text(data.unread_count);
                 });
             }, 10000); // Обновлять каждые 10 секунд (по желанию)

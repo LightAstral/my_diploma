@@ -8,6 +8,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
 from .models import HostingPlan, HostingPurchase, DomainPurchase, ContactMessage
+from django.http import JsonResponse
 
 logger = logging.getLogger(__name__)
 
@@ -267,3 +268,10 @@ def contact_view(request):
 
 def contact_success(request):
     return render(request, 'solar_hosting/contact_success.html')
+
+
+def contactmessage_unread_count(request):
+    # Ваша логика подсчета непрочитанных сообщений
+    unread_count = 50  # Замените на реальное значение
+
+    return JsonResponse({'unread_count': unread_count})

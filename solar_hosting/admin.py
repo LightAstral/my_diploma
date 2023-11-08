@@ -43,5 +43,5 @@ admin.site.register(HostingPurchase)
 admin.site.register(DomainPurchase, DomainPurchaseAdmin)
 admin.site.register(ContactMessage, ContactMessageAdmin)
 
-admin.site.index_template = 'admin/base_site.html'
 
+admin.site.index_template = 'admin/base_site.html'
