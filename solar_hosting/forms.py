@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User, HostingPlan
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from .models import ContactMessage
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -44,3 +45,9 @@ class HostingPurchaseForm(forms.Form):
 
 class DomainPurchaseForm(forms.Form):
     domain_name = forms.CharField(max_length=255, label="Enter domain name")
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['first_name', 'last_name', 'email', 'phone', 'comments']

@@ -29,5 +29,6 @@ urlpatterns = [
     path('purchase_history/', views.purchase_history, name='purchase_history'),
     path('purchase_domain/', views.purchase_domain, name='purchase_domain'),
     path('purchase_domain_confirmation/', views.purchase_domain_confirmation, name='purchase_domain_confirmation'),
-
+    path('contact_view/', views.contact_view, name='contact_view'),
+    path('contact/success/', views.contact_success, name='contact_success'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

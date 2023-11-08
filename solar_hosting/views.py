@@ -3,12 +3,12 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
 from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm, \
-    DomainPurchaseForm
+    DomainPurchaseForm, ContactForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
 from .models import HostingPlan, HostingPurchase, DomainPurchase
-
+from solar_hosting.models import ContactMessage
 logger = logging.getLogger(__name__)
 
 
@@ -232,3 +232,18 @@ def purchase_domain_confirmation(request):
     # Например, получить информацию о покупке, если это необходимо
 
     return render(request, 'solar_hosting/purchase_domain_confirmation.html')
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_success')
+    else:
+        form = ContactForm()
+    return render(request, 'solar_hosting/contact.html', {'form': form})
+
+
+def contact_success(request):
+    return render(request, 'solar_hosting/contact_success.html')
