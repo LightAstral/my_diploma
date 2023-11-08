@@ -2,14 +2,14 @@
 {% block dashboard_content %}
 
 <div class="container">
-    <h1 class="mb-4">История покупок</h1>
-    <h2 class="mb-4">История покупок хостинга</h2>
+    <h1 class="mb-4">Історія покупок</h1>
+    <h2 class="mb-4">Історія покупок хостингу</h2>
     {% if hosting_purchases %}
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Название плана</th>
-                    <th scope="col">Дата покупки</th>
+                    <th scope="col">Назва плану</th>
+                    <th scope="col">дата купівлі</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,16 +22,16 @@
             </tbody>
         </table>
     {% else %}
-        <p>Вы пока не совершили ни одной покупки хостинга.</p>
+        <p>Ви поки що не здійснили жодної покупки хостингу.</p>
     {% endif %}
 
-    <h2 class="mb-4">История покупок доменов</h2>
+    <h2 class="mb-4">Історія покупок доменів</h2>
     {% if domain_purchases %}
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Доменное имя</th>
-                    <th scope="col">Дата покупки</th>
+                    <th scope="col">Доменне ім'я</th>
+                    <th scope="col">Дата купівлі</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +44,7 @@
             </tbody>
         </table>
     {% else %}
-        <p>Вы пока не совершили ни одной покупки доменов.</p>
+        <p>Ви поки що не здійснили жодної покупки доменів.</p>
     {% endif %}
 </div>
 

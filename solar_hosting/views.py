@@ -272,6 +272,6 @@ def contact_success(request):
 
 def contactmessage_unread_count(request):
     # Ваша логика подсчета непрочитанных сообщений
-    unread_count = 50  # Замените на реальное значение
+    unread_count = ContactMessage.objects.filter(read=False).count()
 
     return JsonResponse({'unread_count': unread_count})

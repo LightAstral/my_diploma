@@ -23,7 +23,7 @@
                     <h2>Site administration</h2>
                     <ul class="messagelist">
                         {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            <li{% if message.tags %} class="{{ message.tags }}">{% endif %}
                                 <span class="title">{{ message.level|capfirst }}</span>
                                 {{ message }}
                             </li>
