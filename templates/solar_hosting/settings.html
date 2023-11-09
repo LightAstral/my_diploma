@@ -16,14 +16,14 @@
 
 
 <div class="user-settings">
-    <h4>Настройки пользователя</h4>
+    <h4>Налаштування користувача</h4>
 
     <!-- Личные данные -->
     <div class="data-display">
-        <h5>Личные данные</h5>
+        <h5>Особисті дані</h5>
         <p>Ім'я: {{ user.first_name }}</p>
         <p>Прізвище: {{ user.last_name }}</p>
-        <button class="edit-button">Изменить данные</button>
+        <button class="edit-button">Змінити дані</button>
     </div>
     <!-- Форма для изменения имени -->
     <div class="data-edit">
@@ -35,24 +35,24 @@
             <label for="last_name">Прізвище:</label>
             <input type="text" name="last_name" id="last_name" value="{{ user.last_name }}">
 
-            <button type="submit" class="save-button">Сохранить изменения для имени и фамилии</button>
+            <button type="submit" class="save-button">Зберегти зміни для імені та прізвища</button>
         </form>
 
     </div>
 
     <!-- Email -->
     <div class="data-display">
-        <h5>Email</h5>
+        <h5>Електронна пошта</h5>
         <p>Email: {{ user.email }}</p>
-        <button class="edit-button">Изменить данные</button>
+        <button class="edit-button">Змінити дані</button>
     </div>
     <div class="data-edit">
-        <h5>Email</h5>
+        <h5>Електронна пошта</h5>
         <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=email">
             {% csrf_token %}
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" value="{{ user.email }}">
-            <button type="submit" class="save-button">Сохранить изменения</button>
+            <button type="submit" class="save-button">Зберегти зміни</button>
         </form>
     </div>
 
@@ -60,7 +60,7 @@
     <div class="data-display">
         <h5>Телефон</h5>
         <p>Телефон: {{ user.phone }}</p>
-        <button class="edit-button">Изменить данные</button>
+        <button class="edit-button">Змінити дані</button>
     </div>
     <div class="data-edit">
         <h5>Телефон</h5>
@@ -68,26 +68,54 @@
             {% csrf_token %}
             <label for="phone">Телефон:</label>
             <input type="text" name="phone" id="phone" value="{{ user.phone }}">
-            <button type="submit" class="save-button">Сохранить изменения</button>
+            <button type="submit" class="save-button">Зберегти зміни</button>
         </form>
     </div>
-
-    Пароль
+<!--    <div class="data-display">-->
+<!--        <h5>Пароль</h5>-->
+<!--        <p>Пароль: ********</p>-->
+<!--        <button class="edit-button">Змінити дані</button>-->
+<!--    </div>-->
+<!--    <div class="data-edit">-->
+<!--        <h5>Пароль</h5>-->
+<!--        <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=password">-->
+<!--            {% csrf_token %}-->
+<!--            <label for="password">Новый пароль:</label>-->
+<!--            <input type="password" name="password" id="password">-->
+<!--            <button type="submit" class="save-button">Змінити пароль</button>-->
+<!--        </form>-->
+<!--    </div>-->
     <div class="data-display">
-        <h5>Пароль</h5>
-        <p>Пароль: ********</p>
-        <button class="edit-button">Изменить данные</button>
-    </div>
-    <div class="data-edit">
-        <h5>Пароль</h5>
-        <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=password">
-            {% csrf_token %}
-            <label for="password">Новый пароль:</label>
-            <input type="password" name="password" id="password">
-            <button type="submit" class="save-button">Изменить пароль</button>
-        </form>
-    </div>
+    <h5>Пароль</h5>
+    <p>Пароль: ********</p>
+    <button class="edit-button" onclick="showPasswordForm()">Змінити пароль</button>
+</div>
 
+<div class="data-edit" style="display: none;" id="password-form">
+    <h5>Пароль</h5>
+    <form method="post" action="{% url 'solar_hosting:change_settings' %}?action=password">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="password">Старий пароль:</label>
+            <input type="password" name="old_password" id="old_password">
+        </div>
+        <div class="form-group">
+            <label for="new_password1">Новий пароль:</label>
+            <input type="password" name="new_password1" id="new_password1">
+        </div>
+        <div class="form-group">
+            <label for="new_password2">Підтвердіть новий пароль:</label>
+            <input type="password" name="new_password2" id="new_password2">
+        </div>
+        <button type="submit" class="save-button">Змінити пароль</button>
+    </form>
+</div>
+
+<script>
+    function showPasswordForm() {
+        document.getElementById('password-form').style.display = 'block';
+    }
+</script>
     {% for message in messages %}
     <div class="alert alert-success" role="alert">{{ message }}</div>
     {% endfor %}

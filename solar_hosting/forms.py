@@ -36,7 +36,7 @@ class PhoneChangeForm(forms.Form):
 
 
 class PasswordChangeForm(PasswordChangeForm):
-    pass
+    fields = ['password1', 'password2']
 
 
 class HostingPurchaseForm(forms.Form):
