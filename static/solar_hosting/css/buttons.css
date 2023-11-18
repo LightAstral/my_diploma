@@ -1,11 +1,13 @@
 /* Стиль для кнопки "Панель приладів" */
 .buttonpanel {
+    display: inline-block;
     background-color: #3498db;
     color: black;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 14px;
     margin-top: 10px;
+    text-align: center;
     /* Другие сти5 по вашему усмотрению */
 }
 
@@ -17,5 +19,6 @@
     border-radius: 5px;
     font-size: 14px;
     margin-top: 10px;
+    text-align: center;
     /* Другие стили по вашему усмотрению */
 }

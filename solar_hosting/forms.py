@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User, HostingPlan
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
-from .models import ContactMessage
+from .models import ContactMessage, Testimonial
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -51,3 +51,9 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = ['first_name', 'last_name', 'email', 'phone', 'comments']
+
+
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ['message']

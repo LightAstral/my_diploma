@@ -79,3 +79,11 @@ class ContactMessage(models.Model):
         verbose_name_plural = "Повідомлення"
 
 
+class Testimonial(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Користувач")
+    message = models.TextField(verbose_name="Відгук")
+    submitted_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата відправки")
+
+    class Meta:
+        verbose_name = "Відгук"
+        verbose_name_plural = "Відгуки"

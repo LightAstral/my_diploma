@@ -3,12 +3,13 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
 from .forms import CustomUserCreationForm, EmailChangeForm, PhoneChangeForm, NameChangeForm, HostingPurchaseForm, \
-    DomainPurchaseForm, ContactForm
+    DomainPurchaseForm, ContactForm, TestimonialForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 import logging
-from .models import HostingPlan, HostingPurchase, DomainPurchase, ContactMessage
+from .models import HostingPlan, HostingPurchase, DomainPurchase, ContactMessage, Testimonial
 from django.http import JsonResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 logger = logging.getLogger(__name__)
 
@@ -34,8 +35,25 @@ def pricing(request):
     return render(request, 'solar_hosting/pricing.html')
 
 
+@login_required()
 def testimonials(request):
-    return render(request, 'solar_hosting/testimonials.html')
+    testimonials_list = Testimonial.objects.all()
+    page = request.GET.get('page', 1)  # Получаем номер страницы из GET-параметра 'page'
+
+    paginator = Paginator(testimonials_list, 10)  # Разбиваем список отзывов на страницы (10 отзывов на странице)
+
+    try:
+        testimonials = paginator.page(page)
+    except PageNotAnInteger:
+        testimonials = paginator.page(1)  # Если 'page' не является целым числом, показываем первую страницу
+    except EmptyPage:
+        testimonials = paginator.page(
+            paginator.num_pages)  # Если 'page' больше максимального значения, показываем последнюю страницу
+
+    context = {
+        'testimonials': testimonials,
+    }
+    return render(request, 'solar_hosting/testimonials.html', context)
 
 
 def contact(request):
@@ -210,7 +228,7 @@ def purchase_domain(request):
             # Проверка, существует ли уже такой домен в базе данных
             if DomainPurchase.objects.filter(user=request.user, domain_name=domain_name).exists():
                 # Если домен уже существует, добавьте сообщение об ошибке
-                messages.error(request, 'This domain is already purchased by you.')
+                messages.error(request, "Цей домен ви вже придбали. Введіть нове ім'я домену!")
             else:
                 # Здесь вы можете выполнить действия для покупки домена, например, создать экземпляр DomainPurchase
                 # и сохранить его в базе данных
@@ -275,3 +293,17 @@ def contactmessage_unread_count(request):
     unread_count = ContactMessage.objects.filter(read=False).count()
 
     return JsonResponse({'unread_count': unread_count})
+
+
+@login_required
+def submit_testimonial(request):
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST)
+        if form.is_valid():
+            testimonial = form.save(commit=False)
+            testimonial.user = request.user
+            testimonial.save()
+            return redirect('solar_hosting:testimonials')
+    else:
+        form = TestimonialForm()
+    return render(request, 'solar_hosting/submit_testimonial.html', {'form': form})

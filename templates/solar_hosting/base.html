@@ -200,7 +200,9 @@
                     <li><a href="{% url 'solar_hosting:domain' %}">Домен</a></li>
                     <li><a href="{% url 'solar_hosting:hosting' %}">Хостинг</a></li>
                     <li><a href="{% url 'solar_hosting:pricing' %}">Ціноутворення</a></li>
-<!--                    <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>-->
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'solar_hosting:testimonials' %}">Відгуки</a></li>
+                    {% endif %}
                     <li><a href="{% url 'solar_hosting:contact' %}">Контакти</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

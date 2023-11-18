@@ -35,4 +35,5 @@ urlpatterns = [
                   path('contact/success/', views.contact_success, name='contact_success'),
                   path('contactmessage/unread_count/', views.contactmessage_unread_count,
                        name='contactmessage_unread_count'),
+                  path('submit_testimonial/', views.submit_testimonial, name='submit_testimonial'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,104 +1,154 @@
 {% extends "solar_hosting/base.html" %}
-<!--{% load static %}-->
-{% block content %}
 
-	
-	<div class="all-title-box">
-		<div class="container text-center">
-			<h1>Testimonials<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
-		</div>
-	</div>
-	
-    <div id="testimonial-box" class="section wb">
+{% block content %}
+    {{ block.super }} {# Подключаем содержимое базового блока content #}
+
+    <style>
+        /* Ваши стили для формы */
+        .testimonial-title-box {
+            background-image: url('/uploads/testimonials.jpg');
+            background-size: cover; /* Растягивает изображение на всю ширину и высоту контейнера */
+            background-position: center top; /* Позиционирует изображение внизу центра контейнера */
+            height: 400px; /* Установите желаемую высоту контейнера */
+        }
+
+        .testimonial-title-box h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-section {
+            margin-top: 30px;
+            padding: 50px 0;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            background-color: #fafafa;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-desc {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-meta {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Добавьте дополнительные стили, если необходимо */
+        .testimonial-quote {
+            quotes: "“" "”";
+            font-style: italic;
+        }
+
+        .testimonial-desc h3::before,
+        .testimonial-desc h3::after {
+            content: open-quote;
+            font-size: 36px;
+            line-height: 0.1em;
+            vertical-align: -0.4em;
+        }
+
+        .testimonial-desc h3::after {
+            content: close-quote;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .step-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            justify-content: center;  /* Центрирование ссылок по горизонтали */
+        }
+
+        .step-links a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;  /* Изменение внутренних отступов для более пространственного вида */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;  /* Плавное изменение цвета фона при наведении */
+        }
+
+        .current {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+        }
+
+        .step-links a:hover {
+             background-color: #f4f4f4;
+        }
+
+    </style>
+
+    <div class="testimonial-title-box">
+        <div class="container text-center">
+            <h1>Відгуки<span class="m_1">Думки клієнтів - це дуже важливо для нас!</span></h1>
+        </div>
+    </div>
+
+    <div class="testimonial-section wb">
         <div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-							<p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_01.png" alt="" class="img-responsive alignleft">
-							<h4>James Fernando <small>- Manager of Racer</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div>
-					<!-- end testimonial -->
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-							<p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_02.png" alt="" class="img-responsive alignleft">
-							<h4>Jacques Philips <small>- Designer</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div>
-					<!-- end testimonial -->
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-							<p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_03.png" alt="" class="img-responsive alignleft">
-							<h4>Venanda Mercy <small>- Newyork City</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div>
-					<!-- end testimonial -->
-				</div>
-			</div>
-			<hr class="hr3">
-			<div class="row">
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-							<p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_01.png" alt="" class="img-responsive alignleft">
-							<h4>James Fernando <small>- Manager of Racer</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div>
-					<!-- end testimonial -->
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-							<p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_02.png" alt="" class="img-responsive alignleft">
-							<h4>Jacques Philips <small>- Designer</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div>
-					<!-- end testimonial -->
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="testimonial clearfix">
-						<div class="desc">
-							<h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-							<p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-						</div>
-						<div class="testi-meta">
-							<img src="/uploads/testi_03.png" alt="" class="img-responsive alignleft">
-							<h4>Venanda Mercy <small>- Newyork City</small></h4>
-						</div>
-						<!-- end testi-meta -->
-					</div><!-- end testimonial -->
-				</div>
-			</div>
-		</div>
-    </div><!-- end section -->
+            <div class="row">
+                {% for testimonial in testimonials %}
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-desc">
+                                <h3 class="testimonial-quote"> {{ testimonial.message }} </h3>
+                            </div>
+                            <div class="testimonial-meta">
+                                <h4>{{ testimonial.user }} <small>- {{ testimonial.submitted_date }} </small></h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        {% if user.is_authenticated %}
+            <a href="{% url 'solar_hosting:submit_testimonial' %}" class="btn btn-primary" style="color: #000;">Залиште відгук</a>
+        {% else %}
+            <p style="font-size: 16px;">Будь ласка <a href="{% url 'login' %}" class="btn btn-secondary">Увійдіть</a> залишити відгук.</p>
+        {% endif %}
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if testimonials.has_previous %}
+            <a href="?page=1">&laquo; Перша</a>
+            <a href="?page={{ testimonials.previous_page_number }}">Попередня</a>
+        {% endif %}
+
+        <span class="current">
+            Сторінка {{ testimonials.number }} з {{ testimonials.paginator.num_pages }}.
+        </span>
+
+        {% if testimonials.has_next %}
+            <a href="?page={{ testimonials.next_page_number }}">Наступна</a>
+            <a href="?page={{ testimonials.paginator.num_pages }}">Остання &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
 {% endblock %}
